@@ -44,7 +44,7 @@
                                         </div>
                                         <div class="card-body">
                                             <h4 class="card-title">
-                                                <a href="detail-product.html">{{ $product->name }}</a>
+                                                <a href="{{ route('single.product', $product->id) }}">{{ $product->name }}</a>
                                             </h4>
                                             <div class="card-price">
                                                 <!-- <span class="discount">Rp. 300.000</span> -->

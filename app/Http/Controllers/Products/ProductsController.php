@@ -22,7 +22,11 @@ class ProductsController extends Controller
 
         $product = Product::find($id);
 
-         return view('products.singleproduct', compact('product'));
+        $relatedProducts = Product::where('category_id', $product->category_id)
+         ->where('id', '!=', $id)
+         ->get();
+
+         return view('products.singleproduct', compact('product', 'relatedProducts'));
     }
 
 
