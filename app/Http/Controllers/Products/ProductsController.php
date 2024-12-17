@@ -17,4 +17,14 @@ class ProductsController extends Controller
 
          return view('products.singlecategory', compact('products'));
     }
+
+    public function singleProduct($id) {
+
+        $product = Product::find($id);
+
+         return view('products.singleproduct', compact('product'));
+    }
+
+
+    
 }

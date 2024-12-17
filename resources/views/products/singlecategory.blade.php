@@ -33,7 +33,7 @@
                                         </div>
                                         <div class="card-badge">
                                             <div class="card-badge-container left">
-                                                <span class="badge badge-default">
+                                                <span class="badge badge-primary">
                                                     Until {{ $product->exp_date }}
                                                 </span>
                                                 <span class="badge badge-primary">
@@ -50,8 +50,8 @@
                                                 <!-- <span class="discount">Rp. 300.000</span> -->
                                                 <span class="reguler">USD. {{ $product->price }}</span>
                                             </div>
-                                            <a href="detail-product.html" class="btn btn-block btn-primary">
-                                                Add to Cart
+                                            <a href="{{ route('single.product', $product->id) }}" class="btn btn-block btn-primary">
+                                                display details
                                             </a>
 
                                         </div>
