@@ -15,6 +15,7 @@ class Category extends Model
 
         "name",
         "image",
+        "icon"
     ];
 
     public $timestamps = true;

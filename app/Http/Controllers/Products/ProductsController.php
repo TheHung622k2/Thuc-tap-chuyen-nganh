@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Products;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product\Product;
+use App\Models\Product\Category;
 
 class ProductsController extends Controller
 {
@@ -27,6 +28,15 @@ class ProductsController extends Controller
          ->get();
 
          return view('products.singleproduct', compact('product', 'relatedProducts'));
+    }
+
+
+    public function shop() {
+
+        $categories = Category::select()->orderBy('id', 'desc')->get();
+
+
+         return view('products.shop', compact('categories'));
     }
 
 
