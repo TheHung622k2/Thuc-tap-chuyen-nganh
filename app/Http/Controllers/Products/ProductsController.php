@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product\Product;
 use App\Models\Product\Category;
+use App\Models\Product\Cart;
+use Auth;
+
 
 class ProductsController extends Controller
 {
@@ -65,5 +68,20 @@ class ProductsController extends Controller
     }
 
 
-    
+    public function addToCart(Request $request) {
+
+        $addCart = Cart::create([
+
+            "name" => $request->name,
+            "price" => $request->price,
+            "qty" => $request->qty,
+            "image" => $request->image,
+            "pro_id" => $request->pro_id,
+            "user_id" => Auth::user()->id,
+        ]);
+
+        echo "item added to cart";
+
+
+    }
 }
