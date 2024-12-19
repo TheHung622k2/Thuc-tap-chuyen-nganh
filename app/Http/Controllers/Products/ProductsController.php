@@ -49,9 +49,19 @@ class ProductsController extends Controller
          ->get();
 
 
+        $fishes = Product::select()->where('category_id', "=", 2)
+         ->orderBy('id', 'desc')->take(5)
+         ->get(); 
 
 
-         return view('products.shop', compact('categories', 'mostWanted', 'vegetables', 'meats'));
+        $fruits = Product::select()->where('category_id', "=", 4)
+         ->orderBy('id', 'desc')->take(5)
+         ->get();
+
+
+
+
+         return view('products.shop', compact('categories', 'mostWanted', 'vegetables', 'meats', 'fishes', 'fruits'));
     }
 
 
