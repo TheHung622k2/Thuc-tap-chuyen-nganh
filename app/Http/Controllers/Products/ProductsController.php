@@ -35,8 +35,23 @@ class ProductsController extends Controller
 
         $categories = Category::select()->orderBy('id', 'desc')->get();
 
+        $mostWanted = Product::select()->orderBy('name', 'desc')->take(5)
+         ->get();
 
-         return view('products.shop', compact('categories'));
+        $vegetables = Product::select()->where('category_id', "=", 5)
+         ->orderBy('id', 'desc')->take(5)
+         ->get();
+
+
+
+        $meats = Product::select()->where('category_id', "=", 1)
+         ->orderBy('id', 'desc')->take(5)
+         ->get();
+
+
+
+
+         return view('products.shop', compact('categories', 'mostWanted', 'vegetables', 'meats'));
     }
 
 
