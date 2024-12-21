@@ -18,6 +18,15 @@
             </div>
         </div>
 
+
+        <div class="container mt-5">
+            @if (\Session::has('delete'))
+                <div class="alert alert-success">
+                        <p>{!! \Session::get('delete') !!}</p>
+                </div>
+            @endif
+        </div>
+
         <section id="cart">
             <div class="container">
                 <div class="row">
@@ -55,7 +64,7 @@
                                             USD {{ $product->price * $product->qty }}
                                         </td>
                                         <td>
-                                            <a href="javasript:void" class="text-danger"><i class="fa fa-times"></i></a>
+                                            <a href="{{ route('products.cart.delete', $product->id) }}" class="text-danger"><i class="fa fa-times"></i></a>
                                         </td>
                                     </tr>        
                                     @endforeach

@@ -107,4 +107,19 @@ class ProductsController extends Controller
 
 
 
+    public function deleteFromCart($id) {
+
+        $deleteCart = Cart::find($id);
+
+        $deleteCart->delete();
+
+        
+        if($deleteCart) {
+            return Redirect::route("products.cart")->with(['delete' => 'Product deleted from cart successfully']);
+
+        }
+    }
+
+
+
 }
