@@ -141,7 +141,13 @@ class ProductsController extends Controller
 
     public function checkout() {
 
-        echo "welcome to checkout";
+
+        $cartItems = Cart::select()->where('user_id', Auth::user()->id)->get();
+
+        $checkoutSubtotal = Cart::select()->where('user_id', Auth::user()->id)
+         ->sum('subtotal');
+
+        return view('products.checkout', compact('cartItems', 'checkoutSubtotal'));
     }
     
 
