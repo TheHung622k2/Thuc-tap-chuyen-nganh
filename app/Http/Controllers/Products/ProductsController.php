@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Product\Product;
 use App\Models\Product\Category;
 use App\Models\Product\Cart;
+use App\Models\Product\Order;
+
 use Auth;
 use Redirect;
 use Session;
@@ -151,6 +153,38 @@ class ProductsController extends Controller
     }
     
 
+
+    public function proccessCheckout(Request $request) {
+
+        $checkout = Order::create([
+
+            "name" => $request->name,
+            "last_name" => $request->last_name,
+            "address" => $request->address,
+            "town" => $request->town,
+            "state" => $request->state,
+            "zip_code" => $request->zip_code,
+            "email" => $request->email,
+            "phone_number" => $request->phone_number,
+            "price" => $request->price,
+            "user_id" => $request->user_id,
+            "order_notes" => $request->order_notes
+        ]);
+
+        if($checkout) {
+            return Redirect::route("products.pay");
+
+        }
+
+    }
+
+    public function payWithPaypal() {
+
+
+       echo "pay with paypal"; 
+
+        // return view('products.checkout', compact('cartItems', 'checkoutSubtotal'));
+    }
 
     
 
