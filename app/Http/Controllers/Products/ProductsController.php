@@ -9,6 +9,8 @@ use App\Models\Product\Category;
 use App\Models\Product\Cart;
 use Auth;
 use Redirect;
+use Session;
+
 
 class ProductsController extends Controller
 {
@@ -120,6 +122,31 @@ class ProductsController extends Controller
         }
     }
 
+
+
+    public function prepareCheckout(Request $request) {
+
+        $price = $request->price;
+
+        $value = Session::put('value', $price);
+
+        $newPrice = Session::get($value);
+        
+        if($newPrice > 0) {
+            return Redirect::route("products.checkout");
+
+        }
+    }
+
+
+    public function checkout() {
+
+        echo "welcome to checkout";
+    }
+    
+
+
+    
 
 
 }
