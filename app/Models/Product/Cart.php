@@ -19,6 +19,7 @@ class Cart extends Model
         "qty",
         "pro_id",
         "user_id",
+        "subtotal"
 
     ];
     

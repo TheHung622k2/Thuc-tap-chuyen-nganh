@@ -86,7 +86,7 @@
                             </div>
                           </li>
                           <li class="nav-item">
-                            <a href="cart.html" class="nav-link" data-toggle="" aria-haspopup="true" aria-expanded="false">
+                            <a href="{{ route('products.cart') }}" class="nav-link" data-toggle="" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-shopping-basket"></i> <span class="badge badge-primary">5</span>
                             </a>
                           

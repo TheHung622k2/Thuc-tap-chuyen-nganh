@@ -30,3 +30,4 @@ Route::get('products/shop', [App\Http\Controllers\Products\ProductsController::c
 
 //cart
 Route::post('products/add-cart', [App\Http\Controllers\Products\ProductsController::class, 'addToCart'])->name('products.add.cart');
+Route::get('products/cart', [App\Http\Controllers\Products\ProductsController::class, 'cart'])->name('products.cart');

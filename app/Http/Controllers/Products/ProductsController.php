@@ -83,6 +83,7 @@ class ProductsController extends Controller
             "image" => $request->image,
             "pro_id" => $request->pro_id,
             "user_id" => Auth::user()->id,
+            "subtotal" => $request->qty * $request->price
         ]);
 
         if($addCart) {
@@ -91,4 +92,19 @@ class ProductsController extends Controller
         }
 
     }
+
+    public function cart() {
+
+        $cartProducts = Cart::select()->where('user_id', Auth::user()->id)
+         ->get();
+
+
+        $subtotal = Cart::select()->where('user_id', Auth::user()->id)->sum('subtotal'); 
+
+        return view('products.cart', compact('cartProducts', 'subtotal')); 
+
+    }
+
+
+
 }
