@@ -44,5 +44,14 @@ Route::get('products/pay', [App\Http\Controllers\Products\ProductsController::cl
 Route::get('products/success', [App\Http\Controllers\Products\ProductsController::class, 'success'])->name('products.success')->middleware('check.for.price');
 
 
+//users pages
+Route::get('users/my-orders', [App\Http\Controllers\Users\UsersController::class, 'myOrders'])->name('users.orders');
+
+
+
+
+
+
+
 
 
