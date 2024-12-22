@@ -46,8 +46,8 @@ Route::get('products/success', [App\Http\Controllers\Products\ProductsController
 
 //users pages
 Route::get('users/my-orders', [App\Http\Controllers\Users\UsersController::class, 'myOrders'])->name('users.orders');
-
-
+Route::get('users/settings', [App\Http\Controllers\Users\UsersController::class, 'settings'])->name('users.settings');
+Route::post('users/settings/{id}', [App\Http\Controllers\Users\UsersController::class, 'updateUserSettings'])->name('users.settings.update');
 
 
 

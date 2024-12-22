@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Users;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product\Order;
-use Auth;
+use App\Models\User;
 
+use Auth;
+use Redirect;
 
 
 class UsersController extends Controller
@@ -20,4 +22,40 @@ class UsersController extends Controller
 
         return view('users.myorders', compact('orders'));
     }
+
+
+    public function settings() {
+
+        $user = User::find(Auth::user()->id);
+
+        return view('users.settings', compact('user'));
+    }
+
+
+    public function updateUserSettings(Request $request, $id) {
+
+
+        Request()->validate([
+            "email" => "required|max:40",
+            "name" => "required|max:40",
+        ]);
+
+        $user = User::find($id);
+
+        $user->update($request->all());
+
+        if($user) {
+            return Redirect::route("users.settings")->with(['update' => 'User date updated successfully']);
+
+        }
+    }
+
+
+
+
+
+    
+
+
+    
 }
