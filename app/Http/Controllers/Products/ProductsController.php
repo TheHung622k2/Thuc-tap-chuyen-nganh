@@ -171,6 +171,11 @@ class ProductsController extends Controller
             "order_notes" => $request->order_notes
         ]);
 
+        $value = Session::put('value', $request->price);
+
+        $newPrice = Session::get($value);
+        
+
         if($checkout) {
             return Redirect::route("products.pay");
 
@@ -181,12 +186,29 @@ class ProductsController extends Controller
     public function payWithPaypal() {
 
 
-       echo "pay with paypal"; 
 
-        // return view('products.checkout', compact('cartItems', 'checkoutSubtotal'));
+        return view('products.pay');
     }
 
     
+
+    public function success() {
+
+
+        $deleteItemsFromCart = Cart::where('user_id', Auth::user()->id);
+
+        $deleteItemsFromCart->delete();
+
+
+        if($deleteItemsFromCart) {
+
+
+            Session::forget('value');
+
+            return view("products.success");
+
+        }
+    }
 
 
 }
