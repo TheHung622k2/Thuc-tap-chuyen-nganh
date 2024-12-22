@@ -59,10 +59,10 @@
 
                                 <div class="form-group row">
                                     <div class="col">
-                                        <input class="form-control" name="user_id" value="{{ Auth::user()->id }}" placeholder="user_id" type="text">
+                                        <input class="form-control" name="user_id" value="{{ Auth::user()->id }}" placeholder="user_id" type="hidden">
                                     </div>
                                     <div class="col">
-                                        <input class="form-control" name="price" value="{{ $checkoutSubtotal + 20 }}" type="tel">
+                                        <input class="form-control" name="price" value="{{ $checkoutSubtotal + 20 }}" type="hidden">
                                     </div>
                                 </div>
                               
