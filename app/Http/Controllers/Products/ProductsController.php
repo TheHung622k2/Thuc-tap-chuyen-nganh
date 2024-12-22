@@ -31,15 +31,23 @@ class ProductsController extends Controller
         $product = Product::find($id);
 
         $relatedProducts = Product::where('category_id', $product->category_id)
-         ->where('id', '!=', $id)
-         ->get();
+            ->where('id', '!=', $id)
+            ->get();
 
+        if(isset(auth::user()->id)) {
+            
+   
+   
+           $checkInCart = Cart::where('pro_id', $id)
+            ->where('user_id', Auth::user()->id)
+            ->count(); 
+   
+            return view('products.singleproduct', compact('product', 'relatedProducts', 'checkInCart')); 
+        } else {
+            return view('products.singleproduct', compact('product', 'relatedProducts')); 
 
-        $checkInCart = Cart::where('pro_id', $id)
-         ->where('user_id', Auth::user()->id)
-         ->count(); 
-
-         return view('products.singleproduct', compact('product', 'relatedProducts', 'checkInCart'));
+        }
+        
     }
 
 
