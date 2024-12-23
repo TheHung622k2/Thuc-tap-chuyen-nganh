@@ -44,8 +44,18 @@ class AdminsController extends Controller
         return view('admins.index', compact('productsCount', 'ordersCount', 'categoriesCount', 'adminsCount')); 
     }
 
-    
 
+
+    public function displayAdmins() {
+
+        
+        $allAdmins = Admin::all();
+
+        return view('admins.alladmins', compact('allAdmins')); 
+    }
+
+    
+    
 
     
 }
