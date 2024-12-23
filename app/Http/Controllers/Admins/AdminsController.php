@@ -124,9 +124,35 @@ class AdminsController extends Controller
 
         }
     }
+
+
+
+    public function editCategories($id) {
+
+        $category = Category::find($id);
+        
+
+        return view('admins.editcategories', compact('category')); 
+
+    }
+    
     
 
-    
+
+    public function updateCategories(Request $request, $id) {
+
+
+        $category = Category::find($id);
+
+        $category->update($request->all()); 
+        
+
+        if($category) {
+            return Redirect::route("categories.all")->with(['update' => 'Category updated successfully']);
+
+        }
+    }
+       
 
     
 
