@@ -8,7 +8,8 @@ use App\Models\Product\Product;
 use App\Models\Product\Order;
 use App\Models\Product\Category;
 use App\Models\Admin\Admin;
-
+use Redirect;
+use Illuminate\Support\Facades\Hash;
 
 class AdminsController extends Controller
 {
@@ -54,6 +55,33 @@ class AdminsController extends Controller
         return view('admins.alladmins', compact('allAdmins')); 
     }
 
+    public function createAdmins() {
+
+        
+        
+
+        return view('admins.createadmins'); 
+    }
+
+
+
+    public function storeAdmins(Request $request) {
+
+        $storeAdmins = Admin::create([
+
+            "email" => $request->email,
+            "name" => $request->name,
+            "password" => Hash::make($request->password),
+        ]);
+        
+
+        if($storeAdmins) {
+            return Redirect::route("admins.all")->with(['success' => 'Admin created successfully']);
+
+        }
+    }
+
+    
     
     
 
