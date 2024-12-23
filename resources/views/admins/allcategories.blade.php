@@ -10,8 +10,15 @@
         <div class="col">
           <div class="card">
             <div class="card-body">
+              <div class="container">
+                  @if (\Session::has('success'))
+                    <div class="alert alert-success">
+                      <p>{!! \Session::get('success') !!}</p>
+                    </div>
+                  @endif
+              </div>
               <h5 class="card-title mb-4 d-inline">Categories</h5>
-             <a  href="create-category.html" class="btn btn-primary mb-4 text-center float-right">Create Categories</a>
+             <a  href="{{ route('categories.create') }}" class="btn btn-primary mb-4 text-center float-right">Create Categories</a>
               <table class="table">
                 <thead>
                   <tr>

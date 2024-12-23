@@ -82,7 +82,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function() {
     
     //categories
     Route::get('/all-categories', [App\Http\Controllers\Admins\AdminsController::class, 'displayCategories'])->name('categories.all');
-
+    Route::get('/create-categories', [App\Http\Controllers\Admins\AdminsController::class, 'createCategories'])->name('categories.create');
+    Route::post('/create-categories', [App\Http\Controllers\Admins\AdminsController::class, 'storeCategories'])->name('categories.store');
 
 
 });

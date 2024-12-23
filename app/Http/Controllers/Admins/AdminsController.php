@@ -92,6 +92,42 @@ class AdminsController extends Controller
     }
 
 
+    public function createCategories() {
+
+        
+        
+
+        return view('admins.createcategories'); 
+
+    }
+
+
+
+    public function storeCategories(Request $request) {
+
+
+        $destinationPath = 'assets/img';
+        $myimage = $request->image->getClientOriginalName();
+        $request->image->move(public_path($destinationPath), $myimage);
+
+
+        $storeCategories = Category::create([
+
+            "icon" => $request->icon,
+            "name" => $request->name,
+            "image" => $myimage,
+        ]);
+        
+
+        if($storeCategories) {
+            return Redirect::route("categories.all")->with(['success' => 'Category created successfully']);
+
+        }
+    }
+    
+
+    
+
     
 
     
