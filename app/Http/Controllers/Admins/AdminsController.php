@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Admins;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Product\Product;
+use App\Models\Product\Order;
+use App\Models\Product\Category;
+use App\Models\Admin\Admin;
+
 
 class AdminsController extends Controller
 {
@@ -30,7 +35,13 @@ class AdminsController extends Controller
 
     public function index() {
 
-        return view('admins.index'); 
+
+        $productsCount = Product::select()->count();
+        $ordersCount = Order::select()->count();
+        $categoriesCount = Category::select()->count();
+        $adminsCount = Admin::select()->count();
+
+        return view('admins.index', compact('productsCount', 'ordersCount', 'categoriesCount', 'adminsCount')); 
     }
 
     
