@@ -81,6 +81,19 @@ class AdminsController extends Controller
         }
     }
 
+
+    public function displayCategories() {
+
+        
+        $allCategories = Category::select()->orderBy('id', 'desc')->get();
+
+        return view('admins.allcategories', compact('allCategories')); 
+
+    }
+
+
+    
+
     
     
     
