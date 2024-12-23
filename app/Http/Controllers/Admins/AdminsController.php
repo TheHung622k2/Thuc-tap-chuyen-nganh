@@ -10,7 +10,7 @@ use App\Models\Product\Category;
 use App\Models\Admin\Admin;
 use Redirect;
 use Illuminate\Support\Facades\Hash;
-
+use File;
 class AdminsController extends Controller
 {
     
@@ -152,6 +152,31 @@ class AdminsController extends Controller
 
         }
     }
+
+
+    public function deleteCategories($id) {
+
+
+        $category = Category::find($id);
+
+        if(File::exists(public_path('assets/img/' . $category->image))){
+            File::delete(public_path('assets/img/' . $category->image));
+        }else{
+            //dd('File does not exists.');
+        }
+
+
+        $category->delete(); 
+        
+
+        if($category) {
+            return Redirect::route("categories.all")->with(['delete' => 'Category deleted successfully']);
+
+        }
+    }
+
+
+    
        
 
     
