@@ -89,4 +89,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function() {
     Route::get('/delete-categories/{id}', [App\Http\Controllers\Admins\AdminsController::class, 'deleteCategories'])->name('categories.delete');
 
 
+
+
+
+    //products
+
+    Route::get('/all-products', [App\Http\Controllers\Admins\AdminsController::class, 'displayProducts'])->name('products.all');
+
 });
