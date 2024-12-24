@@ -6,6 +6,13 @@
         <div class="col">
           <div class="card">
             <div class="card-body">
+            <div class="container">
+                  @if (\Session::has('update'))
+                    <div class="alert alert-success">
+                      <p>{!! \Session::get('update') !!}</p>
+                    </div>
+                  @endif
+              </div>
               <h5 class="card-title mb-4 d-inline">Orders</h5>
               <table class="table">
                 <thead>
@@ -35,7 +42,7 @@
                       <td>{{ $order->address }}</td>
                       <td>{{ $order->created_at }}</td>
                       <td>                
-                          <a href="#" class="btn btn-warning text-white mb-4 text-center">update status</a>
+                          <a href="{{ route('orders.edit', $order->id) }}" class="btn btn-warning text-white mb-4 text-center">update status</a>
                       </td>
                     
                     </tr>

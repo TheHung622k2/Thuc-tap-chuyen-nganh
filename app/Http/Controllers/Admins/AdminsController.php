@@ -267,5 +267,32 @@ class AdminsController extends Controller
 
     }
     
+
+
+    public function editOrders($id) {
+
+        $order = Order::find($id);
+        
+
+        return view('admins.editorders', compact('order')); 
+
+    }
+
+
+
+    public function updateOrders(Request $request, $id) {
+
+
+        $order = Order::find($id);
+
+        $order->update($request->all()); 
+        
+
+        if($order) {
+            return Redirect::route("orders.all")->with(['update' => 'Order updated successfully']);
+
+        }
+    }
+    
     
 }
