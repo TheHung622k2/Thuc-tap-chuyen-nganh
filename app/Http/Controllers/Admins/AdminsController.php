@@ -178,9 +178,12 @@ class AdminsController extends Controller
         }
     }
 
+    
+    
+    
     //products
-    
-    
+
+
     public function displayProducts() {
 
         
@@ -201,10 +204,7 @@ class AdminsController extends Controller
     }
 
 
-    
-
-
-
+  
     public function storeProducts(Request $request) {
 
 
@@ -255,6 +255,17 @@ class AdminsController extends Controller
     
     
     
+    //orders
 
+    
+    public function allOrders() {
+
+        
+        $allOrders = Order::select()->orderBy('id', 'desc')->get();
+
+        return view('admins.allorders', compact('allOrders')); 
+
+    }
+    
     
 }
