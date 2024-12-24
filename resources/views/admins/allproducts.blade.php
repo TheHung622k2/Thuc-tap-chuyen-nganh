@@ -6,8 +6,23 @@
         <div class="col">
           <div class="card">
             <div class="card-body">
+            <div class="container">
+                  @if (\Session::has('success'))
+                    <div class="alert alert-success">
+                      <p>{!! \Session::get('success') !!}</p>
+                    </div>
+                  @endif
+              </div>
+
+              <div class="container">
+                  @if (\Session::has('delete'))
+                    <div class="alert alert-success">
+                      <p>{!! \Session::get('delete') !!}</p>
+                    </div>
+                  @endif
+              </div>
               <h5 class="card-title mb-4 d-inline">Products</h5>
-              <a  href="create-products.html" class="btn btn-primary mb-4 text-center float-right">Create Products</a>
+              <a  href="{{ route('products.create')}}" class="btn btn-primary mb-4 text-center float-right">Create Products</a>
             
               <table class="table">
                 <thead>
@@ -27,7 +42,7 @@
                             <td>{{ $product->name }}</td>
                             <td>{{ $product->price }}</td>
                             <td>{{ $product->exp_date }}</td>
-                            <td><a href="#" class="btn btn-danger  text-center ">delete</a></td>
+                            <td><a href="{{ route('products.delete', $product->id) }}" class="btn btn-danger  text-center ">delete</a></td>
                         </tr>
                     @endforeach
                   

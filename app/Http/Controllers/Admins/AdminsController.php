@@ -103,9 +103,6 @@ class AdminsController extends Controller
         return view('admins.createcategories'); 
 
     }
-
-
-
     
     
     
@@ -194,10 +191,67 @@ class AdminsController extends Controller
     }
 
 
-    
+    public function createProducts() {
+
+        
+        $allCategories = Category::all();
+
+        return view('admins.createproducts', compact('allCategories')); 
+
+    }
+
 
     
 
+
+
+    public function storeProducts(Request $request) {
+
+
+        $destinationPath = 'assets/img';
+        $myimage = $request->image->getClientOriginalName();
+        $request->image->move(public_path($destinationPath), $myimage);
+
+
+        $storeProducts = Product::create([
+
+            "price" => $request->price,
+            "name" => $request->name,
+            "description" => $request->description,
+            "category_id" => $request->category_id,
+            "exp_date" => $request->exp_date,
+            "image" => $myimage
+        ]);
+        
+
+        if($storeProducts) {
+            return Redirect::route("products.all")->with(['success' => 'Product created successfully']);
+
+        }
+    }
+
+
+    
+    public function deleteProducts($id) {
+
+
+        $product = Product::find($id);
+
+        if(File::exists(public_path('assets/img/' . $product->image))){
+            File::delete(public_path('assets/img/' . $product->image));
+        }else{
+            //dd('File does not exists.');
+        }
+
+
+        $product->delete(); 
+        
+
+        if($product) {
+            return Redirect::route("products.all")->with(['delete' => 'Product deleted successfully']);
+
+        }
+    }
     
     
     
