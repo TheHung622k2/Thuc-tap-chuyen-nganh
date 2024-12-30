@@ -15,8 +15,7 @@ use Session;
 
 
 class ProductsController extends Controller
-{
-    
+{   
 
     public function singleCategory($id) {
 

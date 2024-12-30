@@ -184,7 +184,7 @@
                 </div>
             </div>
         </div>
-        <p class="copyright">&copy; 2018 Freshcery | Groceries Organic Store. All rights reserved.</p>
+        <p class="copyright">&copy; 2024 Freshcery | Groceries Organic Store. All rights reserved.</p>
     </footer>
 
     <script type="text/javascript" src="{{ asset('assets/js/jquery.js') }}"></script>

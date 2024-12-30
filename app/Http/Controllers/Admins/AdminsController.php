@@ -12,9 +12,7 @@ use Redirect;
 use Illuminate\Support\Facades\Hash;
 use File;
 class AdminsController extends Controller
-{
-    
-
+{ 
 
     public function viewLogin() {
 
@@ -35,7 +33,6 @@ class AdminsController extends Controller
 
 
     public function index() {
-
 
         $productsCount = Product::select()->count();
         $ordersCount = Order::select()->count();

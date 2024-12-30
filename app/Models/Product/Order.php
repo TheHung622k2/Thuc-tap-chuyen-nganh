@@ -24,12 +24,8 @@ class Order extends Model
         "price",
         "user_id",
         "order_notes",
-        "status",
-
-        
-        
+        "status",         
     ];
-
 
     public $timestamps = true;
 }

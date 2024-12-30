@@ -1,4 +1,3 @@
-
 @extends('layouts.admin')
 
 @section('content')
@@ -30,11 +29,8 @@
                             <th scope="row">{{ $admin->id }}</th>
                             <td>{{ $admin->name }}</td>
                             <td>{{ $admin->email }}</td>
-
                         </tr>
-                    @endforeach
-                  
-                 
+                    @endforeach                                 
                 </tbody>
               </table> 
             </div>

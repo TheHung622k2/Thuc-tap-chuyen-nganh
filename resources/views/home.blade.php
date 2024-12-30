@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <div id="page-content" class="page-content" style="margin-top: -25px">
         <div class="banner">
             <div class="jumbotron jumbotron-video text-center bg-dark mb-0 rounded-0">
