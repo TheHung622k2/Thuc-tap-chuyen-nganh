@@ -97,7 +97,7 @@
                                                     {{ $product->name }} x{{ $product->qty }}
                                                 </td>
                                                 <td class="text-right">
-                                                    USD {{ $product->subtotal }}
+                                                    {{ $product->subtotal }}.00$
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -110,7 +110,7 @@
                                                 <strong>Cart Subtotal</strong>
                                             </td>
                                             <td class="text-right">
-                                                USD {{ $checkoutSubtotal }}
+                                                 {{ $checkoutSubtotal }}.00$
                                             </td>
                                         </tr>
                                         <tr>
@@ -118,7 +118,7 @@
                                                 <strong>Shipping</strong>
                                             </td>
                                             <td class="text-right">
-                                                USD 20
+                                                10.00$
                                             </td>
                                         </tr>
                                         <tr>
@@ -126,7 +126,7 @@
                                                 <strong>ORDER TOTAL</strong>
                                             </td>
                                             <td class="text-right">
-                                                <strong>USD {{ $checkoutSubtotal + 20 }}</strong>
+                                                <strong>{{ $checkoutSubtotal + 20 }}.00$</strong>
                                             </td>
                                         </tr>
                                     </tfooter>

@@ -149,10 +149,10 @@
                      <h5>Contact</h5>
                      <ul>
                          <li>
-                            <a href="tel:+620892738334"><i class="fa fa-phone"></i> 08272367238</a>
+                            <a href="tel:+620892738334"><i class="fa fa-phone"></i> 0123456789</a>
                         </li>
                         <li>
-                            <a href="mailto:hello@domain.com"><i class="fa fa-envelope"></i> hello@domain.com</a>
+                            <a href="mailto:hello@gmail.com"><i class="fa fa-envelope"></i> hello@gmail.com</a>
                          </li>
                      </ul>
 
@@ -173,18 +173,18 @@
                      <h5>Get Our App</h5>
                      <ul class="mb-0">
                          <li class="download-app">
-                             <a href="#"><img src="assets/img/playstore.png"></a>
+                             <a href="#"><img src="{{ asset('assets/img/playstore.png') }}"></a>
                          </li>
                          <li style="height: 200px">
                              <div class="mockup">
-                                 <img src="assets/img/mockup.png">
+                                 <img src="{{ asset('assets/img/mockup.png') }}">
                              </div>
                          </li>
                      </ul>
                 </div>
             </div>
         </div>
-        <p class="copyright">&copy; 2024 Freshcery | Groceries Organic Store. All rights reserved.</p>
+        <p class="copyright">&copy; 2024 Freshcery | Thuc Pham Sach. All rights reserved.</p>
     </footer>
 
     <script type="text/javascript" src="{{ asset('assets/js/jquery.js') }}"></script>

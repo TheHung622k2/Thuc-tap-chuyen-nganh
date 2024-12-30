@@ -40,7 +40,7 @@
                             <div class="col-sm-6">
                                 <p>
                                     <strong>Price</strong> (/Pack)<br>
-                                    <span class="price">USD {{ $product->price }}</span>
+                                    <span class="price"> ${{ $product->price }}.00</span>
                                     <!-- <span class="old-price">Rp 150.000</span> -->
                                 </p>
                             </div>

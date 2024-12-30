@@ -54,14 +54,14 @@
                                             <small>1000g</small>
                                         </td>
                                         <td>
-                                            USD {{ $product->price }}
+                                             {{ $product->price }}.00$
                                         </td>
                                         <td>
                                             {{ $product->qty }}
                                         </td>
                                         
                                         <td>
-                                            USD {{ $product->price * $product->qty }}
+                                             {{ $product->price * $product->qty }}.00$
                                         </td>
                                         <td>
                                             <a href="{{ route('products.cart.delete', $product->id) }}" class="text-danger"><i class="fa fa-times"></i></a>
@@ -80,7 +80,7 @@
                     <div class="col text-right">
                    
                         <div class="clearfix"></div>
-                        <h6 class="mt-3">Total: USD. {{ $subtotal }}</h6>
+                        <h6 class="mt-3">Total: {{ $subtotal }}.00$</h6>
                         @if ($subtotal > 0)
                             <form action="{{ route('products.prepare.checkout') }}" method="POST">
                                 @csrf

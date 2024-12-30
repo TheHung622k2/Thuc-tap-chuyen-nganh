@@ -55,14 +55,14 @@
                                 </h3>
 
                                 <p class="text-light">
-                                    Jl. Petani No. 159, Cibabat<br>
-                                    Cimahi Utara<br>
-                                    Kota Cimahi<br>
-                                    Jawa Barat 40513
+                                    It is a long established fact that<br>
+                                    All the Lorem Ipsum generators<br>
+                                    1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"<br>
+                                    e recently with desktop publishing
                                 </p>
 
                                 <p class="text-light">
-                                    <i class="fas fa-phone"></i> 0898986362<br>
+                                    <i class="fas fa-phone"></i> 0123456789<br>
                                     <i class="fas fa-envelope"></i> hello@freshcery.com
                                 </p>
                             </div>
