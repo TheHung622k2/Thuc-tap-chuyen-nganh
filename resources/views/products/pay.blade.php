@@ -40,8 +40,7 @@
                             });
                         }
                         }).render('#paypal-button-container');
-                    </script>
-                  
+                    </script>                 
         </div>
 </div>
 @endsection

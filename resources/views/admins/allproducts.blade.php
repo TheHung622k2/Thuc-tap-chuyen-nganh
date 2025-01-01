@@ -35,7 +35,6 @@
                   </tr>
                 </thead>
                 <tbody>
-
                     @foreach ($allProducts as $product)
                         <tr>
                             <th scope="row">{{ $product->id }}</th>
@@ -44,9 +43,7 @@
                             <td>{{ $product->exp_date }}</td>
                             <td><a href="{{ route('products.delete', $product->id) }}" class="btn btn-danger  text-center ">delete</a></td>
                         </tr>
-                    @endforeach
-                  
-                  
+                    @endforeach 
                 </tbody>
               </table> 
             </div>

@@ -49,7 +49,6 @@ class ProductsController extends Controller
         
     }
 
-
     public function shop() {
 
         $categories = Category::select()->orderBy('id', 'desc')->get();
@@ -83,7 +82,6 @@ class ProductsController extends Controller
          return view('products.shop', compact('categories', 'mostWanted', 'vegetables', 'meats', 'fishes', 'fruits'));
     }
 
-
     public function addToCart(Request $request) {
 
         $addCart = Cart::create([
@@ -116,8 +114,6 @@ class ProductsController extends Controller
 
     }
 
-
-
     public function deleteFromCart($id) {
 
         $deleteCart = Cart::find($id);
@@ -130,8 +126,6 @@ class ProductsController extends Controller
 
         }
     }
-
-
 
     public function prepareCheckout(Request $request) {
 
@@ -158,8 +152,6 @@ class ProductsController extends Controller
 
         return view('products.checkout', compact('cartItems', 'checkoutSubtotal'));
     }
-    
-
 
     public function proccessCheckout(Request $request) {
 
@@ -197,8 +189,6 @@ class ProductsController extends Controller
         return view('products.pay');
     }
 
-    
-
     public function success() {
 
 
@@ -216,6 +206,5 @@ class ProductsController extends Controller
 
         }
     }
-
-
+    
 }

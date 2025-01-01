@@ -19,7 +19,6 @@ class AdminsController extends Controller
         return view('admins.login'); 
     }
 
-
     public function checkLogin(Request $request) {
 
         $remember_me = $request->has('remember_me') ? true : false;
@@ -31,7 +30,6 @@ class AdminsController extends Controller
         return redirect()->back()->with(['error' => 'error logging in']);
     }
 
-
     public function index() {
 
         $productsCount = Product::select()->count();
@@ -41,8 +39,6 @@ class AdminsController extends Controller
 
         return view('admins.index', compact('productsCount', 'ordersCount', 'categoriesCount', 'adminsCount')); 
     }
-
-
 
     public function displayAdmins() {
 
@@ -60,8 +56,6 @@ class AdminsController extends Controller
         return view('admins.createadmins'); 
     }
 
-
-
     public function storeAdmins(Request $request) {
 
         $storeAdmins = Admin::create([
@@ -78,7 +72,6 @@ class AdminsController extends Controller
         }
     }
 
-
     public function displayCategories() {
 
         
@@ -87,11 +80,7 @@ class AdminsController extends Controller
         return view('admins.allcategories', compact('allCategories')); 
 
     }
-
-
-    
-    
-    
+  
     public function createCategories() {
 
         
@@ -100,9 +89,7 @@ class AdminsController extends Controller
         return view('admins.createcategories'); 
 
     }
-    
-    
-    
+ 
     public function storeCategories(Request $request) {
 
 
@@ -125,8 +112,6 @@ class AdminsController extends Controller
         }
     }
 
-
-
     public function editCategories($id) {
 
         $category = Category::find($id);
@@ -135,9 +120,6 @@ class AdminsController extends Controller
         return view('admins.editcategories', compact('category')); 
 
     }
-    
-    
-
 
     public function updateCategories(Request $request, $id) {
 
@@ -152,7 +134,6 @@ class AdminsController extends Controller
 
         }
     }
-
 
     public function deleteCategories($id) {
 

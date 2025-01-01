@@ -31,8 +31,7 @@
 </head>
 <body>
     <div id="app">
- 
-
+        
         <div class="page-header">
         <!--=============== Navbar ===============-->
         <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-transparent" id="page-navigation">
@@ -97,18 +96,14 @@
                           <li class="nav-item">
                             <a href="{{ route('products.cart') }}" class="nav-link" data-toggle="" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-shopping-basket"></i>
-                            </a>
-                          
+                            </a>                        
                         </li>
                     @endguest
                     </ul>
                 </div>
-
             </div>
         </nav>
     </div>
-
-    
 
         <main class="py-4">
             @yield('content')

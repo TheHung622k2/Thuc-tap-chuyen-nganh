@@ -21,6 +21,5 @@ class Product extends Model
         "category_id"
     ];
 
-
     public $timestamps = true;
 }

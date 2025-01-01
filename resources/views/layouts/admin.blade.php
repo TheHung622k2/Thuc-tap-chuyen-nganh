@@ -37,16 +37,13 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ route('products.all') }}" style="margin-left: 20px;">Products</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link" href="{{ route('orders.all') }}" style="margin-left: 20px;">Orders</a>
-            </li>
-          
+            </li>         
           </ul>
         @endauth
       
         <ul class="navbar-nav ml-md-auto d-md-flex">
-
           @auth('admin')
             <li class="nav-item">
               <a class="nav-link" href="{{ route('admins.dashboard') }}">Home

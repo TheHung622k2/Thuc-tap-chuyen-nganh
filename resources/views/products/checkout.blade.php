@@ -100,9 +100,7 @@
                                                     {{ $product->subtotal }}.00$
                                                 </td>
                                             </tr>
-                                        @endforeach
-                                        
-                                        
+                                        @endforeach                                                                             
                                     </tbody>
                                     <tfooter>
                                         <tr>

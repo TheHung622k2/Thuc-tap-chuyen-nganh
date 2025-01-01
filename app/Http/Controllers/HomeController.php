@@ -30,14 +30,12 @@ class HomeController extends Controller
         return view('home', compact('categories'));
     }
 
-
     public function about()
     {
 
 
         return view('pages.about');
     }
-
 
     public function contact()
     {

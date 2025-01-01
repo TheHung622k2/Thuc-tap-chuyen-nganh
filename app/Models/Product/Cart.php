@@ -22,7 +22,6 @@ class Cart extends Model
         "subtotal"
 
     ];
-    
 
     public $timestamps = true;
 }

@@ -43,12 +43,9 @@
                       <td>{{ $order->created_at }}</td>
                       <td>                
                           <a href="{{ route('orders.edit', $order->id) }}" class="btn btn-warning text-white mb-4 text-center">update status</a>
-                      </td>
-                    
+                      </td>              
                     </tr>
-
-                   @endforeach
-                  
+                   @endforeach          
                 </tbody>
               </table> 
             </div>

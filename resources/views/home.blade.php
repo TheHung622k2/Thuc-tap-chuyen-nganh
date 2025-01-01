@@ -33,7 +33,6 @@
                                     <p class="card-text">
                                         Simply click-to-buy on the product you want and submit your order when you're done.
                                     </p>
-
                                 </div>
                             </div>
                         </div>
@@ -51,7 +50,6 @@
                                     <p class="card-text">
                                         Our team ensures the produce quality is up to our standard and delivers to your door within 24 hours of harvest day.
                                     </p>
-
                                 </div>
                             </div>
                         </div>
@@ -76,8 +74,6 @@
                 </div>
             </div>
         </div>
-
-        
 
         <section id="why">
             <h2 class="title">Why Freschery</h2>

@@ -21,14 +21,12 @@ class UsersController extends Controller
         return view('users.myorders', compact('orders'));
     }
 
-
     public function settings() {
 
         $user = User::find(Auth::user()->id);
 
         return view('users.settings', compact('user'));
     }
-
 
     public function updateUserSettings(Request $request, $id) {
 
@@ -48,12 +46,4 @@ class UsersController extends Controller
         }
     }
 
-
-
-
-
-    
-
-
-    
 }

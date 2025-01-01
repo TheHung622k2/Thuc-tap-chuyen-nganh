@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <div id="page-content" class="page-content" style="margin-top: -25px">
         <div class="banner">
             <div class="jumbotron jumbotron-bg text-center rounded-0" style="background-image: url('assets/img/bg-header.jpg');">
