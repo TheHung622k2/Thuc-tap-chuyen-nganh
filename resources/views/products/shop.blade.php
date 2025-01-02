@@ -70,7 +70,7 @@
                                             </h4>
                                             <div class="card-price">
                                                 <!-- <span class="discount">Rp. 300.000</span> -->
-                                                <span class="reguler">USD. {{ $most->price }}</span>
+                                                <span class="reguler">{{ $most->price }}.00$</span>
                                             </div>
                                             <a href="{{ route('single.product', $most->id) }}" class="btn btn-block btn-primary">
                                                 display details
@@ -119,7 +119,7 @@
                                         </h4>
                                         <div class="card-price">
                                             <!-- <span class="discount">Rp. 300.000</span> -->
-                                            <span class="reguler">USD. {{ $product->price }}</span>
+                                            <span class="reguler">{{ $product->price }}.00$</span>
                                         </div>
                                         <a href="{{ route('single.product', $product->id) }}" class="btn btn-block btn-primary">
                                             display details
@@ -169,7 +169,7 @@
                                         </h4>
                                         <div class="card-price">
                                             <!-- <span class="discount">Rp. 300.000</span> -->
-                                            <span class="reguler">USD. {{ $product->price }}</span>
+                                            <span class="reguler">{{ $product->price }}.00$</span>
                                         </div>
                                         <a href="{{ route('single.product', $product->id) }}" class="btn btn-block btn-primary">
                                             display details
@@ -218,7 +218,7 @@
                                         </h4>
                                         <div class="card-price">
                                             <!-- <span class="discount">Rp. 300.000</span> -->
-                                            <span class="reguler">USD. {{ $product->price }}</span>
+                                            <span class="reguler">{{ $product->price }}.00$</span>
                                         </div>
                                         <a href="{{ route('single.product', $product->id) }}" class="btn btn-block btn-primary">
                                             display details
@@ -267,7 +267,7 @@
                                         </h4>
                                         <div class="card-price">
                                             <!-- <span class="discount">Rp. 300.000</span> -->
-                                            <span class="reguler">USD. {{ $product->price }}</span>
+                                            <span class="reguler">{{ $product->price }}.00$</span>
                                         </div>
                                         <a href="{{ route('single.product', $product->id) }}" class="btn btn-block btn-primary">
                                             display details
